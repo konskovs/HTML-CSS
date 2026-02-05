@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Mokymo Priemone - Visos Uzduotys</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 40px;
+            font-family: 'Roboto', sans-serif;
+            background-color: #e0e0e0; 
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+
+        /* Pagrindine kortele */
+        .task-card {
+            background-color: #cccccc;
+            padding: 2px;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        /* Melynas headeris */
+        .task-header {
+            background-color: #0000ff;
+            color: #ffffff;
+            padding: 30px 40px;
+        }
+
+        .task-header h1 {
+            margin: 0 0 10px 0;
+            font-weight: 700;
+            font-size: 2.2rem;
+        }
+
+        .task-header .meta {
+            font-weight: 300;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Baltas ir Tamsus langai */
+        .task-content {
+            display: flex;
+            min-height: 400px;
+            background-color: #fff;
+        }
+
+        /* Kaire puse - SPRENDIMAS (Padidintas sriftas) */
+        .preview-pane {
+            flex: 1;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            border-right: 1px solid #ddd;
+            font-size: 1.4rem; 
+        }
+
+        .preview-pane h1 { font-size: 3rem; }
+        .preview-pane h2 { font-size: 2.5rem; margin: 0 0 10px 0; font-weight: 700; }
+        .preview-pane p { line-height: 1.6; }
+
+        /* Desine puse - KODAS */
+        .code-pane {
+            flex: 1;
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            padding: 25px 35px;
+            overflow-y: auto;
+        }
+
+        .code-label {
+            font-size: 0.75rem;
+            color: #888;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            border-bottom: 1px solid #333;
+            padding-bottom: 5px;
+        }
+
+        pre {
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
+            line-height: 1.6;
+            font-size: 0.9rem;
+            white-space: pre-wrap; 
+            word-break: break-all;
+        }
+
+        /* Kodo paryskinimas */
+        .tag { color: #569cd6; }
+        .attr { color: #9cdcfe; }
+        .val { color: #ce9178; }
+        .comment { color: #6a9955; font-style: italic; }
+
+        /* Preview elementu stiliai */
+        .preview-pane img {
+            max-width: 90%;
+            max-height: 280px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .preview-pane a {
+            color: #0000ff;
+            text-decoration: underline;
+        }
+
+        .preview-pane hr {
+            width: 100%;
+            border: 0;
+            border-top: 1px solid #333;
+            margin: 20px 0;
+        }
+
+        /* Input ir Button stilius preview lange */
+        .preview-pane input, .preview-pane button {
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .preview-pane button {
+            background-color: #f0f0f0;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .preview-pane button:hover {
+            background-color: #e0e0e0;
+        }
+
+        ul, ol {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="task-card">
+        <header class="task-header">
+            <h1>1. Pirmasis tekstas</h1>
+            <div class="meta">
+                Koncepcija: Antrastes (&lt;h1&gt;-&lt;h6&gt;) ir paragrafai (&lt;p&gt;).<br>
+                Uzduotis: Sukurkite puslapi su pagrindine antraste „Mano pirmoji svetaine“ (h1) ir po ja esanciu paragrafu.<br>
+                Testas: Narsykleje turi matytis didelis paryskintas pavadinimas ir po juo paprastas tekstas.
+            </div>
+        </header>
+        <div class="task-content">
+            <section class="preview-pane">
+                <h1>Mano pirmoji svetainė</h1>
+                <p>Labas! As esu pradedantysis kurejas.</p>
+            </section>
+            <section class="code-pane">
+                <div class="code-label">HTML</div>
+                <pre><code><span class="tag">&lt;h1&gt;</span>Mano pirmoji svetaine<span class="tag">&lt;/h1&gt;</span>
+<span class="tag">&lt;p&gt;</span>Labas! As esu pradedantysis kurejas.<span class="tag">&lt;/p&gt;</span></code></pre>
+            </section>
+        </div>
+    </div>
+
+    <div class="task-card">
+        <header class="task-header">
+            <h1>2. Teksto formatavimas</h1>
+            <div class="meta">
+                Koncepcija: Teksto stiliaus tagai (&lt;b&gt;, &lt;i&gt;, &lt;u&gt;).<br>
+                Uzduotis: Parasykite sakini, kuriame vienas zodis butu paryskintas, kitas – pasvires, o trecias – pabrauktas.<br>
+                Testas: Patikrinkite, ar trys skirtingi zodziai turi skirtinga formatavima.
+            </div>
+        </header>
+        <div class="task-content">
+            <section class="preview-pane">
+                <p>Sis sakinys yra <b>paryskintas</b>,<br>sis yra <i>pasvires</i>,<br>o sis — <u>pabrauktas</u>.</p>
+            </section>
+            <section class="code-pane">
+                <div class="code-label">HTML</div>
+                <pre><code><span class="tag">&lt;p&gt;</span>
+  Sis sakinys yra <span class="tag">&lt;b&gt;</span>paryskintas<span class="tag">&lt;/b&gt;</span>, 
+  sis yra <span class="tag">&lt;i&gt;</span>pasvires<span class="tag">&lt;/i&gt;</span>, 
+  o sis — <span class="tag">&lt;u&gt;</span>pabrauktas<span class="tag">&lt;/u&gt;</span>.
+<span class="tag">&lt;/p&gt;</span></code></pre>
+            </section>
+        </div>
+    </div>
+
+    <div class="task-card">
+        <header class="task-header">
+            <h1>3. Sąrašas (Prekių krepšelis)</h1>
+            <div class="meta">
+                Koncepcija: Nerikiuotas sąrašas (&lt;ul&gt;, &lt;li&gt;).<br>
+                Užduotis: Sukurkite prekių sąrašą (Pienas, Duona, Sviestas) naudodami „burbuliukų“ stilių.<br>
+                Testas: Kiekviena prekė turi prasidėti juodu rutuliuku.
+            </div>
+        </header>
+        <div class="task-content">
+            <section class="preview-pane">
+                <ul>
+                    <li>Pienas</li>
+                    <li>Duona</li>
+                    <li>Sviestas</li>
+                </ul>
+            </section>
+            <section class="code-pane">
+                <div class="code-label">HTML</div>
+                <pre><code><span class="tag">&lt;ul&gt;</span>
+  <span class="tag">&lt;li&gt;</span>Pienas<span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;li&gt;</span>Duona<span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;li&gt;</span>Sviestas<span class="tag">&lt;/li&gt;</span>
+<span class="tag">&lt;/ul&gt;</span></code></pre>
+            </section>
+        </div>
+    </div>
+
+    <div class="task-card">
+        <header class="task-header">
+            <h1>4. Instrukcija (Receptas)</h1>
+            <div class="meta">
+                Koncepcija: Rikiuotas sąrašas (&lt;ol&gt;, &lt;li&gt;).<br>
+                Užduotis: Sukurkite 3 žingsnių instrukciją arbatai išvirti. Skaičiai turi atsirasti automatiškai.<br>
+                Testas: Kiekvienas žingsnis turi būti sunumeruotas eilės tvarka (1, 2, 3...).
+            </div>
+        </header>
+        <div class="task-content">
+            <section class="preview-pane">
+                <ol>
+                    <li>Uzvirinti vandeni</li>
+                    <li>Ideti arbata</li>
+                    <li>Ipilti vandens</li>
+                </ol>
+            </section>
+            <section class="code-pane">
+                <div class="code-label">HTML</div>
+                <pre><code><span class="tag">&lt;ol&gt;</span>
+  <span class="tag">&lt;li&gt;</span>Uzvirinti vandeni<span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;li&gt;</span>Ideti arbata<span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;li&gt;</span>Ipilti vandens<span class="tag">&lt;/li&gt;</span>
+<span class="tag">&lt;/ol&gt;</span></code></pre>
+            </section>
+        </div>
+    </div>
+
+    <div class="task-card">
+        <header class="task-header">
+            <h1>5. Paveikslėlis</h1>
+            <div class="meta">
+                Koncepcija: Iliustracijos (&lt;img src="..." alt="..." title="..."&gt;).<br>
+                Užduotis: Įdėkite paveikslėlį naudodami nurodytą URL, nurodykite alt tekstą ir title tekstą „Time lapse photography of vehicles on road“.<br>
+                Testas: Paveikslėlis turi būti matomas, o užvedus pelę turi pasirodyti tekstas.
+            </div>
+        </header>
+        <div class="task-content">
+            <section class="preview-pane">
+                <img 
+                    src="https://images.unsplash.com/photo-1525789351284-e1e7de240152" 
+                    alt="Time lapse photography of vehicles on road" 
+                    title="Time lapse photography of vehicles on road">
+            </section>
+            <section class="code-pane">
+                <div class="code-label">HTML</div>
+                <pre><code><span class="tag">&lt;img</span> 
+  <span class="attr">src=</span><span class="val">"https://images.unsplash.com/photo-1525789351284-e1e7de240152"</span> 
+  <span class="attr">alt=</span><span class="val">"Time lapse photography of vehicles on road"</span> 
+  <span class="attr">title=</span><span class="val">"Time lapse photography of vehicles on road"</span><span class="tag">&gt;</span></code></pre>
+            </section>
+        </div>
+    </div>
+
+    <div class="task-card">
+        <header class="task-header">
+            <h1>6. Nuoroda į Google</h1>
+            <div class="meta">
+                Koncepcija: Hipernuorodos (&lt;a href="..."&gt;).<br>
+                Užduotis: Sukurkite nuorodą su tekstu „Ieškoti Google“. Paspaudus, ji turi atidaryti https://google.com.<br>
+                Testas: Paspaudus ant teksto, naršyklė turi nukreipti į Google puslapį.
+            </div>
+        </header>
+        <div class="task-content">
+            <section class="preview-pane">
+                <a href="https://google.com">Ieškoti Google</a>
+            </section>
+            <section class="code-pane">
+                <div class="code-label">HTML</div>
+                <pre><code><span class="tag">&lt;a</span> <span class="attr">href=</span><span class="val">"https://google.com"</span><span class="tag">&gt;</span>Ieskoti Google<span class="tag">&lt;/a&gt;</span></code></pre>
+            </section>
+        </div>
+    </div>
+
+    <div class="task-card">
+        <header class="task-header">
+            <h1>7. Naujas tab'as</h1>
+            <div class="meta">
+                Koncepcija: Nuorodos atributas (target="_blank").<br>
+                Užduotis: Sukurkite nuorodą į „Delfi“. Padarykite taip, kad paspaudus nuorodą, ji atsidarytų naujame naršyklės skirtuke.<br>
+                Testas: Paspaudus nuorodą, jūsų sukurtas puslapis turi likti atidarytas.
+            </div>
+        </header>
+        <div class="task-content">
+            <section class="preview-pane">
+                <a href="https://delfi.lt" target="_blank">Skaityti Delfi</a>
+            </section>
+            <section class="code-pane">
+                <div class="code-label">HTML</div>
+                <pre><code><span class="tag">&lt;a</span> <span class="attr">href=</span><span class="val">"https://delfi.lt"</span> <span class="attr">target=</span><span class="val">"_blank"</span><span class="tag">&gt;</span>Skaityti Delfi<span class="tag">&lt;/a&gt;</span></code></pre>
+            </section>
+        </div>
+    </div>
+
+    <div class="task-card">
+        <header class="task-header">
+            <h1>8. Linija</h1>
+            <div class="meta">
+                Koncepcija: Horizontalus atskyrimas (&lt;hr&gt;).<br>
+                Užduotis: Parašykite du paragrafus teksto, o tarp jų įterpkite horizontalią liniją.<br>
+                Testas: Tarp tekstų turi matytis plona horizontali linija per visą plotį.
+            </div>
+        </header>
+        <div class="task-content">
+            <section class="preview-pane">
+                <p>Tai yra pirmasis turinio blokas virš linijos.</p>
+                <hr>
+                <p>Tai yra antrasis turinio blokas po linija.</p>
+            </section>
+            <section class="code-pane">
+                <div class="code-label">HTML</div>
+                <pre><code><span class="tag">&lt;p&gt;</span>Tai yra pirmasis turinio blokas virs linijos.<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;hr&gt;</span>
+<span class="tag">&lt;p&gt;</span>Tai yra antrasis turinio blokas po linija.<span class="tag">&lt;/p&gt;</span></code></pre>
+            </section>
+        </div>
+    </div>
+
+    <div class="task-card">
+        <header class="task-header">
+            <h1>9. Eilutės lūžis</h1>
+            <div class="meta">
+                Koncepcija: Priverstinis lūžis (&lt;br&gt;).<br>
+                Užduotis: Parašykite ketureilį viename &lt;p&gt; elemente, naudodami &lt;br&gt; tagą po kiekvienos eilutės.<br>
+                Testas: Tekstas turi būti atvaizduojamas stulpeliu.
+            </div>
+        </header>
+        <div class="task-content">
+            <section class="preview-pane">
+                <p>
+                    Mano batai buvo du,<br>
+                    Vienas dingo - nerandu.<br>
+                    As su vienu batuku<br>
+                    Pats sau juokingas esu.
+                </p>
+            </section>
+            <section class="code-pane">
+                <div class="code-label">HTML</div>
+                <pre><code><span class="tag">&lt;p&gt;</span>
+  Mano batai buvo du,<span class="tag">&lt;br&gt;</span>
+  Vienas dingo - nerandu.<span class="tag">&lt;br&gt;</span>
+  As su vienu batuku<span class="tag">&lt;br&gt;</span>
+  Pats sau juokingas esu.
+<span class="tag">&lt;/p&gt;</span></code></pre>
+            </section>
+        </div>
+    </div>
+
+    <div class="task-card">
+        <header class="task-header">
+            <h1>10. Spalvotas tekstas (Inline)</h1>
+            <div class="meta">
+                Koncepcija: style="color: ..."<br>
+                Užduotis: Naudodami inline CSS pakeiskite antraštės &lt;h2&gt; spalvą į raudoną (red).<br>
+                Testas: Antraštės tekstas turi būti raudonas.
+            </div>
+        </header>
+        <div class="task-content">
+            <section class="preview-pane">
+                <h2 style="color: red;">Ši antraštė yra raudona</h2>
+            </section>
+            <section class="code-pane">
+                <div class="code-label">HTML</div>
+                <pre><code><span class="tag">&lt;h2</span> <span class="attr">style=</span><span class="val">"color: red;"</span><span class="tag">&gt;</span>Si antraste yra raudona<span class="tag">&lt;/h2&gt;</span></code></pre>
+            </section>
+        </div>
+    </div>
+
+    <div class="task-card">
+        <header class="task-header">
+            <h1>11. Fonas (Inline)</h1>
+            <div class="meta">
+                Koncepcija: style="background-color: ..."<br>
+                Užduotis: Sukurkite paragrafą. Nustatykite jam geltoną fono spalvą ir mėlyną teksto spalvą.<br>
+                Testas: Tekstas turi būti tarsi „pažymėtas“ geltonu markeriu.
+            </div>
+        </header>
+        <div class="task-content">
+            <section class="preview-pane">
+                <p style="background-color: yellow; color: blue; padding: 10px;">Šis tekstas yra mėlynas geltoname fone.</p>
+            </section>
+            <section class="code-pane">
+                <div class="code-label">HTML</div>
+                <pre><code><span class="tag">&lt;p</span> <span class="attr">style=</span><span class="val">"background-color: yellow; color: blue;"</span><span class="tag">&gt;</span>Geltonas fonas.<span class="tag">&lt;/p&gt;</span></code></pre>
+            </section>
+        </div>
+    </div>
+
+    <div class="task-card">
+        <header class="task-header">
+            <h1>12. Centravimas</h1>
+            <div class="meta">
+                Koncepcija: style="text-align: ..."<br>
+                Užduotis: Sukurkite &lt;h1&gt; antraštę ir inline stiliaus pagalba išlygiuokite ją puslapio centre.<br>
+                Testas: Antraštė turi būti tiksliai puslapio viduryje.
+            </div>
+        </header>
+        <div class="task-content">
+            <section class="preview-pane" style="display: block;">
+                <h1 style="text-align: center; margin: 0;">Centruota antraštė</h1>
+            </section>
+            <section class="code-pane">
+                <div class="code-label">HTML</div>
+                <pre><code><span class="tag">&lt;h1</span> <span class="attr">style=</span><span class="val">"text-align: center;"</span><span class="tag">&gt;</span>Centruota antraste<span class="tag">&lt;/h1&gt;</span></code></pre>
+            </section>
+        </div>
+    </div>
+
+    <div class="task-card">
+        <header class="task-header">
+            <h1>13. Įvesties laukelis</h1>
+            <div class="meta">
+                Koncepcija: Input laukai (&lt;input type="text"&gt;).<br>
+                Užduotis: Sukurkite laukelį, kuriame vartotojas galėtų įrašyti savo vardą. Pridėkite placeholder atributą „Jūsų vardas“.<br>
+                Testas: Turi atsirasti stačiakampis laukelis su pilku sufleruojančiu tekstu viduje.
+            </div>
+        </header>
+        <div class="task-content">
+            <section class="preview-pane">
+                <input type="text" placeholder="Jūsų vardas">
+            </section>
+            <section class="code-pane">
+                <div class="code-label">HTML</div>
+                <pre><code><span class="tag">&lt;input</span> <span class="attr">type=</span><span class="val">"text"</span> <span class="attr">placeholder=</span><span class="val">"Jusu vardas"</span><span class="tag">&gt;</span></code></pre>
+            </section>
+        </div>
+    </div>
+
+    <div class="task-card">
+        <header class="task-header">
+            <h1>14. Mygtukas</h1>
+            <div class="meta">
+                Koncepcija: Mygtukas (&lt;button&gt;).<br>
+                Užduotis: Sukurkite mygtuką su užrašu „Paspausk mane“.<br>
+                Testas: Puslapyje turi atsirasti paspaudžiamas elementas.
+            </div>
+        </header>
+        <div class="task-content">
+            <section class="preview-pane">
+                <button>Paspausk mane</button>
+            </section>
+            <section class="code-pane">
+                <div class="code-label">HTML</div>
+                <pre><code><span class="tag">&lt;button&gt;</span>Paspausk mane<span class="tag">&lt;/button&gt;</span></code></pre>
+            </section>
+        </div>
+    </div>
+
+    <div class="task-card">
+        <header class="task-header">
+            <h1>15. Komentarai</h1>
+            <div class="meta">
+                Koncepcija: HTML komentarai (&lt;!-- --&gt;).<br>
+                Užduotis: Parašykite bet kokį kodą, o virš jo parašykite komentarą „Čia yra mano kodas“, kuris naršyklėje nesimatytų.<br>
+                Testas: Atidarius puslapį naršyklėje, komentaro teksto neturi matytis.
+            </div>
+        </header>
+        <div class="task-content">
+            <section class="preview-pane">
+                <p>Komentaras yra virš šio teksto kodo lange.</p>
+            </section>
+            <section class="code-pane">
+                <div class="code-label">HTML</div>
+                <pre><code><span class="comment">&lt;!-- Cia yra mano kodas --&gt;</span>
+<span class="tag">&lt;p&gt;</span>Komentaras yra virs sio teksto kodo lange.<span class="tag">&lt;/p&gt;</span></code></pre>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        // Atnaujintas 5 uzduoties alt tekstas.
+        console.log("Baigtas pirmas puslapis su visomis 15 uzduociu.");
+    </script>
+</body>
+</html>

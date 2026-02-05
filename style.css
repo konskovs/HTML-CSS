@@ -1,0 +1,165 @@
+/* Pagrindinis puslapio fonas */
+body {
+    margin: 0;
+    padding: 40px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #e0e0e0; 
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+/* Korteles dizainas */
+.task-card {
+    background-color: #cccccc;
+    padding: 2px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+/* Melynas headeris */
+.task-header {
+    background-color: #0000ff;
+    color: #ffffff;
+    padding: 30px 40px;
+}
+
+.task-header h1 {
+    margin: 0 0 10px 0;
+    font-weight: 700;
+    font-size: 2.2rem;
+}
+
+/* Vidinis turinys */
+.task-content {
+    display: flex;
+    min-height: 400px;
+    background-color: #fff;
+}
+
+/* Kaire puse - PREVIEW */
+.preview-pane {
+    flex: 1;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    border-right: 1px solid #ddd;
+    position: relative;
+    overflow: hidden;
+}
+
+/* --- UZDUOCIU SPRENDIMO STILIAI (PREVIEW) --- */
+
+.preview-pane p { color: gray; }
+.svarbus { font-weight: bold; color: black; }
+#pagrindinis { color: purple; }
+
+.style-task-4 { font-family: Arial, sans-serif !important; }
+.style-task-4 h1 { font-size: 40px !important; color: black; }
+
+.kortele { background-color: #f0f0f0; border: 1px solid #ccc; width: 80%; }
+.no-padding { padding: 0; }
+.su-padding { background-color: #f0f0f0; padding: 20px; border: 1px solid #ccc; width: 80%; }
+
+.remelis-mygtukas { border: 2px solid black; padding: 10px 20px; background-color: white; }
+
+.kvadratas {
+    width: 50px;
+    height: 50px;
+    background-color: orange;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.deze {
+    width: 200px;
+    height: 200px;
+    background-color: green;
+}
+
+.su-kampais {
+    border-radius: 10px;
+}
+
+.svari-nuoroda {
+    text-decoration: none;
+    color: black;
+}
+
+.span-mygtukas {
+    cursor: pointer;
+    background-color: #f0f0f0;
+    padding: 10px 20px;
+    border: 1px solid #999;
+    user-select: none;
+}
+
+.mokymo-lentele {
+    border-collapse: collapse;
+}
+
+.mokymo-lentele td {
+    border: 1px solid black;
+    padding: 15px;
+}
+
+.formos-grupe label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.formos-grupe input {
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    width: 250px;
+}
+
+/* 15 uzduotis: Preview lange rodome fona */
+.background-task-preview {
+    background-image: url('https://images.unsplash.com/photo-1525789351284-e1e7de240152');
+    background-size: cover;
+    background-position: center;
+}
+
+/* ------------------------------------------- */
+
+/* Desine puse - KODAS */
+.code-pane {
+    flex: 1;
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.code-label {
+    font-size: 0.75rem;
+    color: #888;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
+    display: block;
+}
+
+pre {
+    margin: 0 0 30px 0; 
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.tag { color: #569cd6; }
+.attr { color: #9cdcfe; }
+.val { color: #ce9178; }
+.prop { color: #9cdcfe; }

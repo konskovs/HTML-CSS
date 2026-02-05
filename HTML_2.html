@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Mokymo Priemone 2 - CSS Pagrindai</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="task-card">
+        <header class="task-header">
+            <h1>1. Internal CSS</h1>
+            <div class="meta">
+                Koncepcija: Stilius &lt;head&gt; dalyje (&lt;style&gt;).<br>
+                Uzduotis: Istrinkite visus inline stilius. Sukurkite &lt;style&gt; bloka head dalyje. Nustatykite, kad visi p elementai butu pilkos spalvos (gray).<br>
+                Testas: Visi paragrafai puslapyje turi tapti pilki.
+            </div>
+        </header>
+        <div class="task-content">
+            <section class="preview-pane">
+                <h2>Mano puslapis su stiliumi</h2>
+                <p>Sitas tekstas dabar yra pilkas.</p>
+                <p>Ir sitas taip pat yra pilkas!</p>
+            </section>
+
+            <section class="code-pane">
+                <div class="code-label">CSS</div>
+                <pre><code><span class="tag">&lt;style&gt;</span>
+  <span class="tag">p</span> {
+    <span class="prop">color:</span> <span class="val">gray</span>;
+  }
+<span class="tag">&lt;/style&gt;</span></code></pre>
+
+                <div class="code-label">HTML</div>
+                <pre><code><span class="tag">&lt;h2&gt;</span>Mano puslapis su stiliumi<span class="tag">&lt;/h2&gt;</span>
+<span class="tag">&lt;p&gt;</span>Sitas tekstas dabar yra pilkas.<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;p&gt;</span>Ir sitas taip pat yra pilkas!<span class="tag">&lt;/p&gt;</span></code></pre>
+            </section>
+        </div>
+    </div>
+
+    <div class="task-card">
+        <header class="task-header">
+            <h1>2. Klases selektorius</h1>
+            <div class="meta">
+                Koncepcija: Klases (.klases-pavadinimas).<br>
+                Uzduotis: Sukurkite tris paragrafus. Pirmam ir treciam suteikite klase "svarbus". CSS dalyje nustatykite, kad .svarbus tekstas butu paryskintas (font-weight: bold).<br>
+                Testas: Pirmas ir trecias paragrafai paryskinti, antras – paprastas.
+            </div>
+        </header>
+        <div class="task-content">
+            <section class="preview-pane">
+                <p class="svarbus">Svarbus tekstas (Pirmas)</p>
+                <p>Paprastas tekstas (Antras)</p>
+                <p class="svarbus">Vel svarbus tekstas (Trecias)</p>
+            </section>
+
+            <section class="code-pane">
+                <div class="code-label">CSS</div>
+                <pre><code><span class="tag">.svarbus</span> {
+  <span class="prop">font-weight:</span> <span class="val">bold</span>;
+}</code></pre>
+
+                <div class="code-label">HTML</div>
+                <pre><code><span class="tag">&lt;p</span> <span class="attr">class=</span><span class="val">"svarbus"</span><span class="tag">&gt;</span>Svarbus tekstas (Pirmas)<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;p&gt;</span>Paprastas tekstas (Antras)<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;p</span> <span class="attr">class=</span><span class="val">"svarbus"</span><span class="tag">&gt;</span>Vel svarbus tekstas (Trecias)<span class="tag">&lt;/p&gt;</span></code></pre>
+            </section>
+        </div>
+    </div>
+
+    <div class="task-card">
+        <header class="task-header">
+            <h1>3. ID selektorius</h1>
+            <div class="meta">
+                Koncepcija: Unikalus identifikatorius (#id-pavadinimas).<br>
+                Uzduotis: Sukurkite viena antraste su id "pagrindinis". CSS dalyje nustatykite siam ID unikalia spalva (pvz., purple).<br>
+                Testas: Tik sis elementas turi buti violetinis.
+            </div>
+        </header>
+        <div class="task-content">
+            <section class="preview-pane">
+                <h2 id="pagrindinis">Unikali antraste</h2>
+                <p>Paprastas tekstas po ja.</p>
+            </section>
+
+            <section class="code-pane">
+                <div class="code-label">CSS</div>
+                <pre><code><span class="tag">#pagrindinis</span> {
+  <span class="prop">color:</span> <span class="val">purple</span>;
+}</code></pre>
+
+                <div class="code-label">HTML</div>
+                <pre><code><span class="tag">&lt;h2</span> <span class="attr">id=</span><span class="val">"pagrindinis"</span><span class="tag">&gt;</span>Unikali antraste<span class="tag">&lt;/h2&gt;</span>
+<span class="tag">&lt;p&gt;</span>Paprastas tekstas po ja.<span class="tag">&lt;/p&gt;</span></code></pre>
+            </section>
+        </div>
+    </div>
+
+    <div class="task-card">
+        <header class="task-header">
+            <h1>4. Srifto dydis ir tipas</h1>
+            <div class="meta">
+                Koncepcija: font-family, font-size.<br>
+                Uzduotis: Visam body elementui nustatykite srifta Arial. Antrastems h1 nustatykite dydi 40px.<br>
+                Testas: Tekstas turi pasikeisti i Arial, o antraste tapti didesne.
+            </div>
+        </header>
+        <div class="task-content">
+            <section class="preview-pane style-task-4">
+                <h1>Didele antraste</h1>
+                <p>Sitas tekstas dabar turetu buti Arial sriftu.</p>
+            </section>
+
+            <section class="code-pane">
+                <div class="code-label">CSS</div>
+                <pre><code><span class="tag">body</span> {
+  <span class="prop">font-family:</span> <span class="val">Arial</span>;
+}
+
+<span class="tag">h1</span> {
+  <span class="prop">font-size:</span> <span class="val">40px</span>;
+}</code></pre>
+
+                <div class="code-label">HTML</div>
+                <pre><code><span class="tag">&lt;h1&gt;</span>Didele antraste<span class="tag">&lt;/h1&gt;</span>
+<span class="tag">&lt;p&gt;</span>Sitas tekstas dabar turetu buti Arial sriftu.<span class="tag">&lt;/p&gt;</span></code></pre>
+            </section>
+        </div>
+    </div>
+
+    <div class="task-card">
+        <header class="task-header">
+            <h1>5. Div konteineris</h1>
+            <div class="meta">
+                Koncepcija: Grupavimas (&lt;div&gt;).<br>
+                Uzduotis: Idekite antraste ir paragrafa i &lt;div&gt; elementa. Suteikite div'ui klase "kortele" ir nustatykite sviesiai pilka fona.<br>
+                Testas: Turi matytis pilkas blokas, kurio viduje yra tekstas.
+            </div>
+        </header>
+        <div class="task-content">
+            <section class="preview-pane">
+                <div class="kortele no-padding">
+                    <h3>Be vidiniu tarpu</h3>
+                    <p>Tekstas lieciasi prie krastu.</p>
+                </div>
+            </section>
+
+            <section class="code-pane">
+                <div class="code-label">CSS</div>
+                <pre><code><span class="tag">.kortele</span> {
+  <span class="prop">background-color:</span> <span class="val">#f0f0f0</span>;
+}</code></pre>
+
+                <div class="code-label">HTML</div>
+                <pre><code><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"kortele"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;h3&gt;</span>Be vidiniu tarpu<span class="tag">&lt;/h3&gt;</span>
+  <span class="tag">&lt;p&gt;</span>Tekstas lieciasi prie krastu.<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;/div&gt;</span></code></pre>
+            </section>
+        </div>
+    </div>
+
+    <div class="task-card">
+        <header class="task-header">
+            <h1>6. Krastines (Borders)</h1>
+            <div class="meta">
+                Koncepcija: border.<br>
+                Uzduotis: Sukurkite mygtuka. CSS dalyje uzdekite jam 2px storio, vientisa (solid), juoda remeli.<br>
+                Testas: Aplink mygtuka turi buti ryskus remelis.
+            </div>
+        </header>
+        <div class="task-content">
+            <section class="preview-pane">
+                <button class="remelis-mygtukas">Mano Mygtukas</button>
+            </section>
+
+            <section class="code-pane">
+                <div class="code-label">CSS</div>
+                <pre><code><span class="tag">.remelis-mygtukas</span> {
+  <span class="prop">border:</span> <span class="val">2px solid black</span>;
+  <span class="prop">padding:</span> <span class="val">10px 20px</span>;
+  <span class="prop">background-color:</span> <span class="val">white</span>;
+}</code></pre>
+
+                <div class="code-label">HTML</div>
+                <pre><code><span class="tag">&lt;button</span> <span class="attr">class=</span><span class="val">"remelis-mygtukas"</span><span class="tag">&gt;</span>Mano Mygtukas<span class="tag">&lt;/button&gt;</span></code></pre>
+            </section>
+        </div>
+    </div>
+
+    <div class="task-card">
+        <header class="task-header">
+            <h1>7. Vidiniai tarpai (Padding)</h1>
+            <div class="meta">
+                Koncepcija: padding (tarpas tarp turinio ir remelio).<br>
+                Uzduotis: Paimkite anksciau sukurta kortele (div). Pridekite padding: 20px.<br>
+                Testas: Tekstas neturi liestis prie pilko fono krastu.
+            </div>
+        </header>
+        <div class="task-content">
+            <section class="preview-pane">
+                <div class="su-padding">
+                    <h3>Kortele su padding</h3>
+                    <p>Tekstas dabar turi vietos kvepuoti!</p>
+                </div>
+            </section>
+
+            <section class="code-pane">
+                <div class="code-label">CSS</div>
+                <pre><code><span class="tag">.su-padding</span> {
+  <span class="prop">background-color:</span> <span class="val">#f0f0f0</span>;
+  <span class="prop">padding:</span> <span class="val">20px</span>;
+}</code></pre>
+
+                <div class="code-label">HTML</div>
+                <pre><code><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"su-padding"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;h3&gt;</span>Kortele su padding<span class="tag">&lt;/h3&gt;</span>
+  <span class="tag">&lt;p&gt;</span>Tekstas dabar turi vietos kvepuoti!<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;/div&gt;</span></code></pre>
+            </section>
+        </div>
+    </div>
+
+    <div class="task-card">
+        <header class="task-header">
+            <h1>8. Isoriniai tarpai (Margin)</h1>
+            <div class="meta">
+                Koncepcija: margin (tarpas tarp elementu).<br>
+                Uzduotis: Sukurkite du atskirus div kvadratus. Pridekite jiems margin-bottom: 20px.<br>
+                Testas: Kvadratai neturi buti sulipe.
+            </div>
+        </header>
+        <div class="task-content">
+            <section class="preview-pane">
+                <div class="kvadratas">1</div>
+                <div class="kvadratas">2</div>
+            </section>
+
+            <section class="code-pane">
+                <div class="code-label">CSS</div>
+                <pre><code><span class="tag">.kvadratas</span> {
+  <span class="prop">width:</span> <span class="val">50px</span>;
+  <span class="prop">height:</span> <span class="val">50px</span>;
+  <span class="prop">background-color:</span> <span class="val">orange</span>;
+  <span class="prop">margin-bottom:</span> <span class="val">20px</span>;
+}</code></pre>
+
+                <div class="code-label">HTML</div>
+                <pre><code><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"kvadratas"</span><span class="tag">&gt;</span>1<span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"kvadratas"</span><span class="tag">&gt;</span>2<span class="tag">&lt;/div&gt;</span></code></pre>
+            </section>
+        </div>
+    </div>
+
+    <div class="task-card">
+        <header class="task-header">
+            <h1>9. Plotis ir Aukstis</h1>
+            <div class="meta">
+                Koncepcija: width, height.<br>
+                Uzduotis: Sukurkite div su klase "deze". Nustatykite jai width: 200px, height: 200px ir background-color: green.<br>
+                Testas: Turi matytis zalias kvadratas.
+            </div>
+        </header>
+        <div class="task-content">
+            <section class="preview-pane">
+                <div class="deze"></div>
+            </section>
+
+            <section class="code-pane">
+                <div class="code-label">CSS</div>
+                <pre><code><span class="tag">.deze</span> {
+  <span class="prop">width:</span> <span class="val">200px</span>;
+  <span class="prop">height:</span> <span class="val">200px</span>;
+  <span class="prop">background-color:</span> <span class="val">green</span>;
+}</code></pre>
+
+                <div class="code-label">HTML</div>
+                <pre><code><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"deze"</span><span class="tag">&gt;&lt;/div&gt;</span></code></pre>
+            </section>
+        </div>
+    </div>
+
+    <div class="task-card">
+        <header class="task-header">
+            <h1>10. Uzapvalinti kampai</h1>
+            <div class="meta">
+                Koncepcija: border-radius.<br>
+                Uzduotis: Paimkite zalia kvadrata ir nustatykite border-radius: 10px.<br>
+                Testas: Kvadrato kampai turi tapti svelnus/apvalus.
+            </div>
+        </header>
+        <div class="task-content">
+            <section class="preview-pane">
+                <div class="deze su-kampais"></div>
+            </section>
+
+            <section class="code-pane">
+                <div class="code-label">CSS</div>
+                <pre><code><span class="tag">.su-kampais</span> {
+  <span class="prop">width:</span> <span class="val">200px</span>;
+  <span class="prop">height:</span> <span class="val">200px</span>;
+  <span class="prop">background-color:</span> <span class="val">green</span>;
+  <span class="prop">border-radius:</span> <span class="val">10px</span>;
+}</code></pre>
+
+                <div class="code-label">HTML</div>
+                <pre><code><span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"deze su-kampais"</span><span class="tag">&gt;&lt;/div&gt;</span></code></pre>
+            </section>
+        </div>
+    </div>
+
+    <div class="task-card">
+        <header class="task-header">
+            <h1>11. Nuorodos be pabraukimo</h1>
+            <div class="meta">
+                Koncepcija: text-decoration.<br>
+                Uzduotis: Sukurkite nuoroda. CSS dalyje nurodykite text-decoration: none ir pakeiskite spalva i juoda.<br>
+                Testas: Nuoroda turi atrodyti kaip paprastas tekstas (be melyno pabraukimo).
+            </div>
+        </header>
+        <div class="task-content">
+            <section class="preview-pane">
+                <a href="#" class="svari-nuoroda">As esu nuoroda</a>
+            </section>
+
+            <section class="code-pane">
+                <div class="code-label">CSS</div>
+                <pre><code><span class="tag">.svari-nuoroda</span> {
+  <span class="prop">text-decoration:</span> <span class="val">none</span>;
+  <span class="prop">color:</span> <span class="val">black</span>;
+}</code></pre>
+
+                <div class="code-label">HTML</div>
+                <pre><code><span class="tag">&lt;a</span> <span class="attr">href=</span><span class="val">"#"</span> <span class="attr">class=</span><span class="val">"svari-nuoroda"</span><span class="tag">&gt;</span>As esu nuoroda<span class="tag">&lt;/a&gt;</span></code></pre>
+            </section>
+        </div>
+    </div>
+
+    <div class="task-card">
+        <header class="task-header">
+            <h1>12. Pelytes kursorius</h1>
+            <div class="meta">
+                Koncepcija: cursor.<br>
+                Uzduotis: Sukurkite elementa (pvz., span), kuris atrodo kaip mygtukas. Nustatykite cursor: pointer.<br>
+                Testas: Uzvedus pele ant elemento, rodikle turi pasikeisti i rankyte (rodyti, kad galima spausti).
+            </div>
+        </header>
+        <div class="task-content">
+            <section class="preview-pane">
+                <span class="span-mygtukas">Uzeik pele ant manes</span>
+            </section>
+
+            <section class="code-pane">
+                <div class="code-label">CSS</div>
+                <pre><code><span class="tag">.span-mygtukas</span> {
+  <span class="prop">cursor:</span> <span class="val">pointer</span>;
+  <span class="prop">background-color:</span> <span class="val">#f0f0f0</span>;
+  <span class="prop">padding:</span> <span class="val">10px 20px</span>;
+  <span class="prop">border:</span> <span class="val">1px solid #999</span>;
+}</code></pre>
+
+                <div class="code-label">HTML</div>
+                <pre><code><span class="tag">&lt;span</span> <span class="attr">class=</span><span class="val">"span-mygtukas"</span><span class="tag">&gt;</span>Uzeik pele ant manes<span class="tag">&lt;/span&gt;</span></code></pre>
+            </section>
+        </div>
+    </div>
+
+    <div class="task-card">
+        <header class="task-header">
+            <h1>13. Lenteles (Table) remeliai</h1>
+            <div class="meta">
+                Koncepcija: table, border-collapse.<br>
+                Uzduotis: Sukurkite paprasta 2x2 lentele. CSS nustatykite border: 1px solid black lentelei ir td. Naudokite border-collapse: collapse.<br>
+                Testas: Turi matytis tvarkinga lentele su viengubais remeliais.
+            </div>
+        </header>
+        <div class="task-content">
+            <section class="preview-pane">
+                <table class="mokymo-lentele">
+                    <tr>
+                        <td>1 Celė</td>
+                        <td>2 Celė</td>
+                    </tr>
+                    <tr>
+                        <td>3 Celė</td>
+                        <td>4 Celė</td>
+                    </tr>
+                </table>
+            </section>
+
+            <section class="code-pane">
+                <div class="code-label">CSS</div>
+                <pre><code><span class="tag">table</span> {
+  <span class="prop">border-collapse:</span> <span class="val">collapse</span>;
+}
+
+<span class="tag">td</span> {
+  <span class="prop">border:</span> <span class="val">1px solid black</span>;
+  <span class="prop">padding:</span> <span class="val">10px</span>;
+}</code></pre>
+
+                <div class="code-label">HTML</div>
+                <pre><code><span class="tag">&lt;table&gt;</span>
+  <span class="tag">&lt;tr&gt;</span>
+    <span class="tag">&lt;td&gt;</span>1 Cele<span class="tag">&lt;/td&gt;</span>
+    <span class="tag">&lt;td&gt;</span>2 Cele<span class="tag">&lt;/td&gt;</span>
+  <span class="tag">&lt;/tr&gt;</span>
+  <span class="tag">&lt;tr&gt;</span>
+    <span class="tag">&lt;td&gt;</span>3 Cele<span class="tag">&lt;/td&gt;</span>
+    <span class="tag">&lt;td&gt;</span>4 Cele<span class="tag">&lt;/td&gt;</span>
+  <span class="tag">&lt;/tr&gt;</span>
+<span class="tag">&lt;/table&gt;</span></code></pre>
+            </section>
+        </div>
+    </div>
+
+    <div class="task-card">
+        <header class="task-header">
+            <h1>14. Formos etiketes (Labels)</h1>
+            <div class="meta">
+                Koncepcija: label ir input ryšys (for ir id).<br>
+                Uzduotis: Sukurkite label „El. paštas“ ir input lauka. Susiekite juos taip, kad paspaudus ant žodžio, žymeklis atsirastų laukelyje.<br>
+                Testas: Paspaudus ant teksto (label), input laukas turi tapti aktyvus.
+            </div>
+        </header>
+        <div class="task-content">
+            <section class="preview-pane">
+                <div class="formos-grupe">
+                    <label for="el-pastas">El. paštas:</label>
+                    <input type="email" id="el-pastas" placeholder="pavyzdys@pastas.lt">
+                </div>
+            </section>
+
+            <section class="code-pane">
+                <div class="code-label">CSS</div>
+                <pre><code><span class="tag">label</span> {
+  <span class="prop">display:</span> <span class="val">block</span>;
+  <span class="prop">margin-bottom:</span> <span class="val">5px</span>;
+  <span class="prop">cursor:</span> <span class="val">pointer</span>;
+}
+
+<span class="tag">input</span> {
+  <span class="prop">padding:</span> <span class="val">8px</span>;
+  <span class="prop">border:</span> <span class="val">1px solid #ccc</span>;
+}</code></pre>
+
+                <div class="code-label">HTML</div>
+                <pre><code><span class="tag">&lt;label</span> <span class="attr">for=</span><span class="val">"el-pastas"</span><span class="tag">&gt;</span>El. paštas:<span class="tag">&lt;/label&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type=</span><span class="val">"email"</span> <span class="attr">id=</span><span class="val">"el-pastas"</span><span class="tag">&gt;</span></code></pre>
+            </section>
+        </div>
+    </div>
+
+    <div class="task-card">
+        <header class="task-header">
+            <h1>15. Fono paveikslelis</h1>
+            <div class="meta">
+                Koncepcija: background-image.<br>
+                Uzduotis: Nustatykite body elementui fono paveiksleli (url) ir nurodykite background-size: cover, kad jis uzdengtu visa ekrana.<br>
+                Testas: Visas puslapio fonas turi buti paveikslelis, o ne balta spalva.
+            </div>
+        </header>
+        <div class="task-content">
+            <section class="preview-pane background-task-preview">
+                <h1 style="color: white; text-shadow: 2px 2px 4px black;">Sveiki atvyke</h1>
+            </section>
+
+            <section class="code-pane">
+                <div class="code-label">CSS</div>
+                <pre><code><span class="tag">body</span> {
+  <span class="prop">background-image:</span> <span class="val">url('fonas.jpg')</span>;
+  <span class="prop">background-size:</span> <span class="val">cover</span>;
+  <span class="prop">background-position:</span> <span class="val">center</span>;
+}</code></pre>
+
+                <div class="code-label">HTML</div>
+                <pre><code><span class="tag">&lt;body&gt;</span>
+  <span class="tag">&lt;h1&gt;</span>Sveiki atvyke<span class="tag">&lt;/h1&gt;</span>
+<span class="tag">&lt;/body&gt;</span></code></pre>
+            </section>
+        </div>
+    </div>
+
+</body>
+</html>
